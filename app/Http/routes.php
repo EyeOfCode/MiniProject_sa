@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Minicon\login@getlogin');
+
+Route::get('/register','Minicon\register@getregister');
+Route::post('/postregister','Minicon\register@postregister');
