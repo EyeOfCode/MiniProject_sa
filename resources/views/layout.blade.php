@@ -17,5 +17,13 @@
 		@yield('register')
 	</div>
 
+	<div class="index">
+		@yield('index')
+	</div>
+
+	<div class="admin">
+		@yield('admin')
+	</div>
+
 </body>
 </html>

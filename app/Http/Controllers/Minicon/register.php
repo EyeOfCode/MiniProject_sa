@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Minicon;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Session;
 
 class register extends Controller
 {
@@ -11,19 +13,27 @@ class register extends Controller
     {
         return view('viewsminisa_pj.register');
     }
-    public function postregister()
-    {   
-        $register = new \App\registers();
-        $register->name = \Input::get('name');
-        $register->username = \Input::get('username');
-        $register->password = \Input::get('password');
-        
-        if ($register->username !="" && $register->password !="" && $register->name!="") {
-                $register->save();
-                echo "<script>window.top.window.showResult('1');</script>";
-            }else{
-            	echo "<script>window.top.window.showResult('2');</script>";
-            }
+
+    public function postregister(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:50',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:6|max:12',
+        ]);
+        $user = new \App\users();
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->name = $request->input('name');
+        $user->save();
+        Session::set('id', $user->id);
+        Session::set('email', $user->email);
+        Session::set('status', $user->status);
+        Session::set('name', $user->name);
+        Session::set('logout', "logout");
+        return redirect('/index');
+
     }
 }
+
 ?>

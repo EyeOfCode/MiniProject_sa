@@ -18,43 +18,51 @@
 
     <!-- Custom Fonts -->
     <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="css/http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+          rel="stylesheet" type="text/css">
 
     <!-- jQuery -->
     <script src="css/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="css/js/bootstrap.min.js"></script>
-
 </head>
 
 <body class="menu">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand topnav" href="#">Mini</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a>User:...</a>
-                    </li>
-                    <li>
-                        <a href="#">Status</a>
-                    </li>
-                    <li>
-                        <a href="#">AddStatus</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand topnav" href="#">Mini</a>
         </div>
-        <!-- /.container -->
-    </nav>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                @if(Session::has('logout')=="logout")
+                    <li>
+                        <a>User:{{ Session::get('name') }}</a>
+                    </li>
+                    @if(Session::get('status')=="1")
+                        <li>
+                            <a href="/MiniProject_sa/admin">AddStatus</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="/MiniProject_sa/index">Status</a>
+                        </li>
+                    @endif
+                    <li>
+                        <a href="/MiniProject_sa/logout">logout</a>
+                    </li>
+                @endif
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
 
 </body>
 
