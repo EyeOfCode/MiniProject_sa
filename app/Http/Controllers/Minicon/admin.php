@@ -26,7 +26,7 @@ class admin extends Controller
         $this->validate($request, [
             'username' => 'required',
             'FBS' => 'required|integer',
-            'BP' => 'required|integer',
+            'BP' => 'required|numeric',
         ]);
         $user = \App\users::find($id);
 

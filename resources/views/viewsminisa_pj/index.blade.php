@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+          rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="../css/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
 </head>
 
 <body class="index">
@@ -42,9 +59,12 @@
                                     @elseif($st->FBS>=155 && $st->FBS<=182)
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill="Orange"/>
-                                    @elseif($st->FBS>=183)
+                                    @elseif($st->FBS>=183 && $st->BP<1.8)
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill="Red"/>
+                                    @elseif($st->FBS>=183 && $st->BP>=1.8)
+                                        <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
+                                                fill=""/>
                                     @endif
                                 </svg>
                                 @if($st->FBS==0)
@@ -62,8 +82,10 @@
                                         <border><h3><B>Peter Status: Sick 1</B></h3></border>
                                     @elseif($st->FBS>=155 && $st->FBS<=182)
                                         <border><h3><B>Peter Status: Sick 2</B></h3></border>
-                                    @elseif($st->FBS>=183)
+                                    @elseif($st->FBS>=183 && $st->BP<1.8)
                                         <border><h3><B>Peter Status: Sick 3</B></h3></border>
+                                    @elseif($st->FBS>=183 && $st->BP>=1.8)
+                                        <border><h3><B>Peter Status: Complications</B></h3></border>
                                     @endif
                                 </center>
                             </td>

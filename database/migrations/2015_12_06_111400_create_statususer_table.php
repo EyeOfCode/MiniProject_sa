@@ -12,11 +12,11 @@ class CreateStatususerTable extends Migration
      */
     public function up()
     {
-        Schema::create('statususer', function (Blueprint $table) {
+        Schema::create('statususers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
             $table->integer('FBS');
-            $table->integer('BP');
+            $table->double('BP');
             $table->string('comment');
             $table->rememberToken();
             $table->timestamps();

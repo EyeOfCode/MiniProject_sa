@@ -16,9 +16,10 @@ class login extends Controller
 
     public function postLogin(Request $request)
     {
+        $getuser = \App\users::where('email', $request->input('email'))->get();
         $this->validate($request, [
             'email' => 'required|email|exists:users,email',
-            'password' => 'required|min:6|max:12',
+            'password' => 'required|min:6|max:12|exists:users,password,id,'.$getuser[0]['id'],
         ]);
         $user = \App\users::All();
         $useremail = $request->input('email');
@@ -35,10 +36,10 @@ class login extends Controller
                 Session::set('status', $status);
                 Session::set('name', $name);
                 Session::set('logout', "logout");
-                if(Session::get('status')==1) {
+                if (Session::get('status') == 1) {
                     return redirect('/admin');
-                }else{
-                    return redirect('/index/'.$name);
+                } else {
+                    return redirect('/index/' . $name);
                 }
             }
         endforeach;

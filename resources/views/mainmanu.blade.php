@@ -10,6 +10,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="icon" type="image/png" href="css\img\favicon.png" />
+
     <!-- Bootstrap Core CSS -->
     <link href="css/css/bootstrap.min.css" rel="stylesheet">
 
@@ -35,7 +37,7 @@
     <div class="container topnav">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand topnav" href="#">Health</a>
+            <a class="navbar-brand topnav" href="#"><h4>Health</h4></a><img src="css\img\favicon.png">
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

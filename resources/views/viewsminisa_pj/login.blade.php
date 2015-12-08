@@ -3,6 +3,7 @@
 
 <head>
     <title>Health</title>
+    <link rel="icon" type="image/png" href="css\img\favicon.png" />
 </head>
 
 <body class="login">
