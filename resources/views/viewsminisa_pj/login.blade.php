@@ -23,7 +23,7 @@
                         <?php echo csrf_field(); ?>
                         <tr>
                             <td>Email: <br><br></td>
-                            <td><input type="email" name="email"><br><br></td>
+                            <td><input type="email" name="email" placeholder="xxx@hotmail.com"><br><br></td>
                         </tr>
                         <tr>
                             <td>Pass Word : <br><br></td>

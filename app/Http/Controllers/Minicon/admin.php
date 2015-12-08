@@ -26,7 +26,9 @@ class admin extends Controller
         $this->validate($request, [
             'username' => 'required',
             'FBS' => 'required|integer',
-            'BP' => 'required|numeric',
+            'BPmax' => 'required|numeric',
+            'BPmin' => 'required|numeric',
+            'Complications' => '',
         ]);
         $user = \App\users::find($id);
 
@@ -34,7 +36,9 @@ class admin extends Controller
 
         $status = \App\statususers::findOrNew($st[0]['id']);
         $status->FBS = $request->input('FBS');
-        $status->BP = $request->input('BP');
+        $status->BPmax = $request->input('BPmax');
+        $status->BPmin = $request->input('BPmin');
+        $status->complications = $request->input('Complications');
         $status->comment = $request->input('comment');
         $status->save();
         return redirect('/admin');

@@ -23,11 +23,11 @@
 
                         <tr>
                             <td>Name: <br><br></td>
-                            <td><input type="text" name="name"><br><br></td>
+                            <td><input type="text" name="name" placeholder="xxx xxx"><br><br></td>
                         </tr>
                         <tr>
                             <td>Email: <br><br></td>
-                            <td><input type="email" name="email"><br><br></td>
+                            <td><input type="email" name="email" placeholder="xxx@hotmail.com"><br><br></td>
                         </tr>
                         <tr>
                             <td>Pass Word : <br><br></td>

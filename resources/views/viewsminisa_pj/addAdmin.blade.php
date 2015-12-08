@@ -55,21 +55,23 @@
                                 </td>
                             <tr>
                                 <td><br><br>
-                                        Select User:{{$user->name}}<input type="hidden" value="{{$user->name}}"
-                                                                    name="username">
+                                    Select User:{{$user->name}}<input type="hidden" value="{{$user->name}}"
+                                                                      name="username">
                                 </td>
                             </tr>
                             <tr>
                                 <td><br>
                                     FBS: <input type="if(isNaN(this.value)){ alert('number awy'); this.value='';}"
-                                                name="FBS" maxlength="3" >
+                                                name="FBS" maxlength="3">
                                 </td>
                             </tr>
                             <tr>
                                 <td><br>
-                                    BP: <input type="if(isNaN(this.value)){ alert('number awy'); this.value='';}"
-                                               name="BP" maxlength="5">
-                                </td>
+                                    SBP: <input type="if(isNaN(this.value)){ alert('number awy'); this.value='';}"
+                                                name="BPmax" maxlength="5">
+                                    DBP: <input type="if(isNaN(this.value)){ alert('number awy'); this.value='';}"
+                                                name="BPmin" maxlength="3"><br><br>
+                                    Complications: <input type="checkbox" name="Complications" value="1">
                             </tr>
                             <tr>
                                 <td><br>

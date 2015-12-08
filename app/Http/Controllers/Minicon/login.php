@@ -19,7 +19,7 @@ class login extends Controller
         $getuser = \App\users::where('email', $request->input('email'))->get();
         $this->validate($request, [
             'email' => 'required|email|exists:users,email',
-            'password' => 'required|min:6|max:12|exists:users,password,id,'.$getuser[0]['id'],
+            'password' => 'required|min:6|max:12',
         ]);
         $user = \App\users::All();
         $useremail = $request->input('email');
@@ -43,13 +43,15 @@ class login extends Controller
                 }
             }
         endforeach;
-    }
-
-    public function getLogout()
-    {
-        Session::flush();
         return redirect('/');
     }
+
+public
+function getLogout()
+{
+    Session::flush();
+    return redirect('/');
+}
 }
 
 ?>

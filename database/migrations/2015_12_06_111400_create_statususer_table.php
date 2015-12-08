@@ -16,7 +16,9 @@ class CreateStatususerTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->integer('FBS');
-            $table->double('BP');
+            $table->integer('BPmax');
+            $table->integer('BPmin');
+            $table->integer('complications');
             $table->string('comment');
             $table->rememberToken();
             $table->timestamps();

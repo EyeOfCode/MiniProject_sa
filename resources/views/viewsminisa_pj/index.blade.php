@@ -44,25 +44,25 @@
                         <tr>
                             <td>
                                 <svg height="430" width="1135">
-                                    @if($st->FBS<100 && $st->FBS>0)
+                                    @if($st->FBS<100 && $st->FBS>0 && $st->complications=="0")
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill="white"/>
-                                    @elseif($st->FBS>=100 && $st->FBS<125)
+                                    @elseif($st->FBS>=100 && $st->FBS<125 && $st->complications=="0")
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill="#00FF00"/>
-                                    @elseif($st->FBS>=125 && $st->FBS<126)
+                                    @elseif($st->FBS>=125 && $st->FBS<126 && $st->complications=="0")
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill="DarkGreen"/>
-                                    @elseif($st->FBS>=126 && $st->FBS<=154)
+                                    @elseif($st->FBS>=126 && $st->FBS<=154 && $st->complications=="0")
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill="Yellow"/>
-                                    @elseif($st->FBS>=155 && $st->FBS<=182)
+                                    @elseif($st->FBS>=155 && $st->FBS<=182 && $st->complications=="0")
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill="Orange"/>
-                                    @elseif($st->FBS>=183 && $st->BP<1.8)
+                                    @elseif($st->FBS>=183 && $st->complications=="0")
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill="Red"/>
-                                    @elseif($st->FBS>=183 && $st->BP>=1.8)
+                                    @elseif($st->complications=="1")
                                         <circle cx="570" cy="250" r="150" stroke="black" stroke-width="3"
                                                 fill=""/>
                                     @endif
@@ -72,19 +72,19 @@
                                 @endif
                                 <br>
                                 <center>
-                                    @if($st->FBS<100 && $st->FBS>0)
+                                    @if($st->FBS<100 && $st->FBS>0 && $st->complications=="0")
                                         <border><h3><B>Peter Status: Save</B></h3></border>
-                                    @elseif($st->FBS>=100 && $st->FBS<125)
+                                    @elseif($st->FBS>=100 && $st->FBS<125 && $st->complications=="0")
                                         <border><h3><B>Peter Status: Risky</B></h3></border>
-                                    @elseif($st->FBS>=125 && $st->FBS<126)
+                                    @elseif($st->FBS>=125 && $st->FBS<126 && $st->complications=="0")
                                         <border><h3><B>Peter Status: Sick 0</B></h3></border>
-                                    @elseif($st->FBS>=126 && $st->FBS<=154)
+                                    @elseif($st->FBS>=126 && $st->FBS<=154 && $st->complications=="0")
                                         <border><h3><B>Peter Status: Sick 1</B></h3></border>
-                                    @elseif($st->FBS>=155 && $st->FBS<=182)
+                                    @elseif($st->FBS>=155 && $st->FBS<=182 && $st->complications=="0")
                                         <border><h3><B>Peter Status: Sick 2</B></h3></border>
-                                    @elseif($st->FBS>=183 && $st->BP<1.8)
+                                    @elseif($st->FBS>=183 && $st->complications=="0")
                                         <border><h3><B>Peter Status: Sick 3</B></h3></border>
-                                    @elseif($st->FBS>=183 && $st->BP>=1.8)
+                                    @elseif($st->complications==1)
                                         <border><h3><B>Peter Status: Complications</B></h3></border>
                                     @endif
                                 </center>
@@ -103,7 +103,11 @@
                                 <br>
                                 <border><h4><B>FBS: {{$st->FBS}}</B></h4></border>
                                 <br>
-                                <border><h4><B>BP: {{$st->BP}}</B></h4></border>
+                                <border><h4><B>SBP: {{$st->BPmax}} DBP: {{$st->BPmin}}</B></h4></border>
+                                <br>
+                                @if($st->complications==1)
+                                    <border><h3><B><font color="red">complications</font></B></h3></border>
+                                @endif
                                 <br>
                                 <border><h3><B>::Comment::</B></h3></border>
                                 <br>
