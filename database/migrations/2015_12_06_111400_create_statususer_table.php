@@ -14,7 +14,6 @@ class CreateStatususerTable extends Migration
     {
         Schema::create('statususer', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
             $table->string('username');
             $table->integer('FBS');
             $table->integer('BP');
@@ -31,6 +30,6 @@ class CreateStatususerTable extends Migration
      */
     public function down()
     {
-        Schema::drop('statususer');
+        Schema::drop('statususers');
     }
 }

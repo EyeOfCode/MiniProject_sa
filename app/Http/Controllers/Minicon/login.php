@@ -17,7 +17,7 @@ class login extends Controller
     public function postLogin(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required',
+            'email' => 'required|email|exists:users,email',
             'password' => 'required|min:6|max:12',
         ]);
         $user = \App\users::All();
@@ -38,7 +38,7 @@ class login extends Controller
                 if(Session::get('status')==1) {
                     return redirect('/admin');
                 }else{
-                    return redirect('/index');
+                    return redirect('/index/'.$name);
                 }
             }
         endforeach;

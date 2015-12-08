@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Mini</title>
+    <title>Health</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +35,7 @@
     <div class="container topnav">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand topnav" href="#">Mini</a>
+            <a class="navbar-brand topnav" href="#">Health</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,7 +50,7 @@
                         </li>
                     @else
                         <li>
-                            <a href="/MiniProject_sa/index">Status</a>
+                            <a href="/MiniProject_sa/index/{{Session::get('name')}}">Status</a>
                         </li>
                     @endif
                     <li>

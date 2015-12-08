@@ -25,5 +25,9 @@
 		@yield('admin')
 	</div>
 
+	<div class="addadmin">
+		@yield('addadmin')
+	</div>
+
 </body>
 </html>

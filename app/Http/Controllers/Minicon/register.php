@@ -17,7 +17,7 @@ class register extends Controller
     public function postregister(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:50',
+            'name' => 'required|max:50|unique:users',
             'email' => 'required|unique:users',
             'password' => 'required|min:6|max:12',
         ]);
@@ -26,13 +26,19 @@ class register extends Controller
         $user->password = $request->input('password');
         $user->name = $request->input('name');
         $user->save();
+        $status = new \App\statususers();
+        $status->username = $request->input('name');
+        $status->save();
         Session::set('id', $user->id);
         Session::set('email', $user->email);
         Session::set('status', $user->status);
         Session::set('name', $user->name);
         Session::set('logout', "logout");
-        return redirect('/index');
-
+        if(Session::get('status')==1) {
+            return redirect('/admin');
+        }else{
+            return redirect('/index/'.Session::get('name'));
+        }
     }
 }
 
