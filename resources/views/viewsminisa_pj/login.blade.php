@@ -19,7 +19,7 @@
                     </td>
                     <br><br>
 
-                    <form method="post" action="/MiniProject_sa/Cklogin" name="login">
+                    <form method="post" action="/Cklogin" name="login">
                         <?php echo csrf_field(); ?>
                         <tr>
                             <td>Email: <br><br></td>

@@ -40,7 +40,7 @@
                 <div id="home" class="tab-pane fade in active">
                     <p>
 
-                    <form method="post" action="/MiniProject_sa/addAdmin/{{$user->id}}">
+                    <form method="post" action="/addAdmin/{{$user->id}}">
                         <?php echo csrf_field(); ?>
                         <table border="0">
                             <tr>
@@ -79,7 +79,7 @@
                                     <br>
                                     <input type="submit" name="submit" value="Submint">
                                     <input type="button" name="back" value="Back"
-                                           onclick="window.location='/MiniProject_sa/admin'">
+                                           onclick="window.location='/admin'">
                                     <br><br>
                                     @if (count($errors) > 0)
                                         <div class="alert alert-danger">

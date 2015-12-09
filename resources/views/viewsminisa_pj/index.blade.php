@@ -75,7 +75,7 @@
                                     @if($st->FBS<100 && $st->FBS>0 && $st->complications=="0")
                                         <border><h3><B>Peter Status: Save</B></h3></border>
                                     @elseif($st->FBS>=100 && $st->FBS<125 && $st->complications=="0")
-                                        <border><h3><B>Peter Status: Risky</B></h3></border>
+                                        <border><h3><B>Peter Status: Risk</B></h3></border>
                                     @elseif($st->FBS>=125 && $st->FBS<126 && $st->complications=="0")
                                         <border><h3><B>Peter Status: Sick 0</B></h3></border>
                                     @elseif($st->FBS>=126 && $st->FBS<=154 && $st->complications=="0")

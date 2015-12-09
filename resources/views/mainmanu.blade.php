@@ -48,15 +48,15 @@
                     </li>
                     @if(Session::get('status')=="1")
                         <li>
-                            <a href="/MiniProject_sa/admin">AddStatus</a>
+                            <a href="/admin">AddStatus</a>
                         </li>
                     @else
                         <li>
-                            <a href="/MiniProject_sa/index/{{Session::get('name')}}">Status</a>
+                            <a href="/index/{{Session::get('name')}}">Status</a>
                         </li>
                     @endif
                     <li>
-                        <a href="/MiniProject_sa/logout">logout</a>
+                        <a href="/logout">logout</a>
                     </li>
                 @endif
             </ul>

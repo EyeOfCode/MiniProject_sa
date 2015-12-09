@@ -18,7 +18,7 @@
                     </td>
                     <br><br>
 
-                    <form method="post" action="/MiniProject_sa/postregister" name="register">
+                    <form method="post" action="/postregister" name="register">
                         <?php echo csrf_field(); ?>
 
                         <tr>

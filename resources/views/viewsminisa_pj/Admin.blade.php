@@ -43,11 +43,11 @@
                                 @endif
 
                                 <div class="delete-con">
-                                    <form method="post" action="/MiniProject_sa/delete/{{$user->id}}">
+                                    <form method="post" action="/delete/{{$user->id}}">
                                         <?php echo csrf_field(); ?>
                                         <td>
                                             <button type="button" class="btn btn-primary center-block"
-                                                    onclick="window.location.href='/MiniProject_sa/addAdmin/{{$user->id}}'">
+                                                    onclick="window.location.href='/addAdmin/{{$user->id}}'">
                                                             <span class="glyphicon">
                                                             </span>Add
                                             </button>
